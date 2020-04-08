@@ -1,0 +1,2 @@
+class FavoriteConstellationsController < ApplicationController
+end

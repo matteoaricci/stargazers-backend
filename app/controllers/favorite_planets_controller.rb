@@ -1,0 +1,2 @@
+class FavoritePlanetsController < ApplicationController
+end
