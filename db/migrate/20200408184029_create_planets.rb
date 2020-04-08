@@ -3,7 +3,7 @@ class CreatePlanets < ActiveRecord::Migration[6.0]
     create_table :planets do |t|
       t.string :name
       t.text :description
-      t.boolean :inhabitable
+      t.boolean :habitable
 
       t.timestamps
     end
