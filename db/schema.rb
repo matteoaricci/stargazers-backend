@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_04_08_184059) do
 
   create_table "planets", force: :cascade do |t|
     t.string "name"
+    t.string "image"
     t.text "description"
     t.boolean "habitable"
     t.datetime "created_at", precision: 6, null: false

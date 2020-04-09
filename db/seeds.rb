@@ -13,15 +13,15 @@ FavoritePlanet.destroy_all
 User.destroy_all
 Sign.destroy_all
 
-jupiter = Planet.create(name: "Jupiter", description: "Big gas planet", habitable: false)
-mars = Planet.create(name: "Mars", description: "Red, no air", habitable: false)
-mercury = Planet.create(name: "Mercury", description: "The smallest planet in our solar system", habitable: false)
-venus = Planet.create(name: "Venus", description: "Named after the Roman goddess of love and beauty", habitable: false)
-earth = Planet.create(name: "Earth", description: "The only astronomical object known to hold life", habitable: true)
-saturn = Planet.create(name: "Saturn", description: "The least dense planet in the solar system", habitable: false)
-uranus = Planet.create(name: "Uranus", description: "The coldest planet in the solar system", habitable: false)
-neptune = Planet.create(name: "Neptune", description: "Home to the strongest winds in the solar system", habitable: false)
-pluto = Planet.create(name: "Pluto", description: "Although some people wrongly believe Pluto is not a planet, it definitely scientifically without a doubt IS a planet", habitable: false)
+jupiter = Planet.create(name: "Jupiter", image: "", description: "Big gas planet", habitable: false)
+mars = Planet.create(name: "Mars", image: "", description: "Red, no air", habitable: false)
+mercury = Planet.create(name: "Mercury", image: "", description: "The smallest planet in our solar system", habitable: false)
+venus = Planet.create(name: "Venus", image: "", description: "Named after the Roman goddess of love and beauty", habitable: false)
+earth = Planet.create(name: "Earth", image: "", description: "The only astronomical object known to hold life", habitable: true)
+saturn = Planet.create(name: "Saturn", image: "", description: "The least dense planet in the solar system", habitable: false)
+uranus = Planet.create(name: "Uranus", image: "", description: "The coldest planet in the solar system", habitable: false)
+neptune = Planet.create(name: "Neptune", image: "", description: "Home to the strongest winds in the solar system", habitable: false)
+pluto = Planet.create(name: "Pluto", image: "", description: "Although some people wrongly believe Pluto is not a planet, it definitely scientifically without a doubt IS a planet", habitable: false)
 
 aries = Sign.create(name: "Aries", description: "The symbol is a ram", image: "https://www.horoscope.com/images-US/signs/profile-aries.png", start_month: 3, start_day: 21, end_month: 4, end_day: 19)
 capricorn = Sign.create(name: "Capricorn", description: "The symbol is a goat", image: "https://www.horoscope.com/images-US/signs/profile-capricorn.png", start_month: 12, start_day: 21, end_month: 1, end_day: 19)
