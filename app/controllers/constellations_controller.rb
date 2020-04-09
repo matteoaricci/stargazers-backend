@@ -10,4 +10,5 @@ class ConstellationsController < ApplicationController
         constellation = Constellation.find(params[:id])
 
         render json: constellation
+    end
 end
