@@ -12,6 +12,13 @@ class UsersController < ApplicationController
         render json: user
     end
 
+    def profile
+        token = request.headers["Authentication"]
+        payload = decode(token)
+        user = User.find(payload["user_id"])
+        render json: user
+    end
+
     # def create
     #     user = User.new(name: params[:name], current_level: 1, password: params[:password])   
     #     if user.valid?

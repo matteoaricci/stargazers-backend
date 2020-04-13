@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2020_04_08_184059) do
     t.integer "birth_month"
     t.integer "birth_day"
     t.integer "sign_id"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
