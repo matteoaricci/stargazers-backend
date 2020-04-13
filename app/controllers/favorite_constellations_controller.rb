@@ -2,7 +2,7 @@ class FavoriteConstellationsController < ApplicationController
     def index
         favorite_constellations = FavoriteConstellation.all
 
-        render json: favorite_constellations
+        render json: favorite_constellations, include: [:constellation, :user]
     end
     
     def create

@@ -16,19 +16,23 @@ class UsersController < ApplicationController
         token = request.headers["Authentication"]
         payload = decode(token)
         user = User.find(payload["user_id"])
-        render json: user
+        sign = user.sign
+        render json: {user: user, sign: sign}
     end
 
-    # def create
-    #     user = User.new(name: params[:name], current_level: 1, password: params[:password])   
-    #     if user.valid?
-    #         user.save
-    #         render json: user
-    #     else
-    #         render json: {
-    #             message: user.errors.full_messages
-    #              }
-    #     end
+    def create
+        user = User.new(user_params) 
+        password = params[:password]
+        user.update(password: password)
+        if user.valid?
+            user.save
+            render json: user
+        else
+            render json: {
+                message: user.errors.full_messages
+            }
+        end
+    end
 
     # def update
     #     user = User.find(params[:id])
@@ -40,5 +44,10 @@ class UsersController < ApplicationController
 
     # def delete
     # end
+
+    private
+    def user_params
+        params.require(:user).permit(:name, :username, :bio, :birth_month, :birth_day, :sign_id)
+    end
 
 end

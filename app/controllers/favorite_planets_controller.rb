@@ -2,7 +2,7 @@ class FavoritePlanetsController < ApplicationController
     def index
         favorite_planets = FavoritePlanet.all
 
-        render json: favorite_planets
+        render json: favorite_planets, include: [:planet, :user]
     end
     
     def create

@@ -51,7 +51,7 @@ pisces_constellation = Constellation.create(name: "Pisces", description: "Pisces
 bigdipper = Constellation.create(name: "The Big Dipper", description: "it's a big dipper", image: "", sign: nil)
 
 lauren = User.create(name: "Lauren", password: "s", username:"Lauren", bio:"I have two cats.", birth_month: 12, birth_day: 9, sign: sagittarius)
-bri = User.create(name: "Bri", username:"Bri", password: "s", bio:"I'm a dog person.'", birth_month: 1, birth_day: 16, sign: capricorn)
+bri = User.create(name: "Bri", username:"Bri", password: "s", bio:"I'm a dog person.", birth_month: 1, birth_day: 16, sign: capricorn)
 matteo = User.create(name: "Matteo", username:"Matteo", password: "s", bio:"Quarantine is awesome for my dating life.", birth_month: 10, birth_day: 31, sign: scorpio)
 
 laurenplanet = FavoritePlanet.create(planet: pluto, user: lauren)
