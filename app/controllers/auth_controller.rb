@@ -6,7 +6,8 @@ class AuthController < ApplicationController
             payload = {user_id: user.id}
             token = encode(payload)
             render json: {
-                user_data: user,
+                user: user,
+                sign: user.sign,
                 error: false,
                 token: token
             } else 

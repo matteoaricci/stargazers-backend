@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     def index
         users = User.all
 
-        render json: users
+        render json: users, include: [:sign]
     end
 
     def show
@@ -26,14 +26,23 @@ class UsersController < ApplicationController
         user.update(password: password)
         if user.valid?
             user.save
-            render json: user
+            payload = {user_id: user.id}
+            token = encode(payload)
+            render json: {
+                user: user,
+                sign: user.sign,
+                error: false,
+                token: token
+            }
         else
             render json: {
+                error: true,
                 message: user.errors.full_messages
             }
         end
     end
 
+   
     # def update
     #     user = User.find(params[:id])
 
