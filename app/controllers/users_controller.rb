@@ -3,13 +3,13 @@ class UsersController < ApplicationController
     def index
         users = User.all
 
-        render json: users, include: [:sign]
+        render json: users, include: [:sign, :constellations, :planets]
     end
 
     def show
         user = User.find(params[:id])
 
-        render json: user
+        render json: user, include: [:constellations, :planets]
     end
 
     def profile
@@ -41,22 +41,26 @@ class UsersController < ApplicationController
             }
         end
     end
-
    
-    # def update
-    #     user = User.find(params[:id])
-
-    #     current_level = params[:current_level]
-    #     user.update(current_level: current_level)
-    #     resp json: user
-    # end
-
-    # def delete
-    # end
+    def update
+        user = User.find(params[:id])
+        user.update(user_params)
+        if user.valid?
+            render json: {
+                user: user,
+                error: false,
+            }
+        else
+            render json: {
+                error: true,
+                message: user.errors.full_messages
+            }
+        end
+    end
 
     private
     def user_params
-        params.require(:user).permit(:name, :username, :bio, :birth_month, :birth_day, :sign_id)
+        params.require(:user).permit(:name, :username, :bio, :birth_month, :birth_day, :sign_id, :image)
     end
 
 end
