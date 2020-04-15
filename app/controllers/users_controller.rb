@@ -16,8 +16,8 @@ class UsersController < ApplicationController
         token = request.headers["Authentication"]
         payload = decode(token)
         user = User.find(payload["user_id"])
-        sign = user.sign
-        render json: {user: user, sign: sign}
+        
+        render json: {user: user, sign: user.sign, planets: user.planets, constellations: user.constellations}
     end
 
     def create
