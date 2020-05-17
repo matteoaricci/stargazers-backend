@@ -58,6 +58,13 @@ class UsersController < ApplicationController
         end
     end
 
+    def destroy
+        user = User.find(params[:id])
+        user.delete
+
+        render json: {message: "user deleted"}
+    end
+
     private
     def user_params
         params.require(:user).permit(:name, :username, :bio, :birth_month, :birth_day, :sign_id, :image)

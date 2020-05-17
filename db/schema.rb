@@ -24,13 +24,6 @@ ActiveRecord::Schema.define(version: 2020_04_14_215634) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "conversations", force: :cascade do |t|
-    t.integer "sender_id"
-    t.integer "recipient_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "favorite_constellations", force: :cascade do |t|
     t.integer "user_id"
     t.integer "constellation_id"
@@ -43,17 +36,6 @@ ActiveRecord::Schema.define(version: 2020_04_14_215634) do
     t.integer "planet_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "messages", force: :cascade do |t|
-    t.text "body"
-    t.bigint "conversation_id"
-    t.bigint "user_id"
-    t.boolean "read", default: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "planets", force: :cascade do |t|
