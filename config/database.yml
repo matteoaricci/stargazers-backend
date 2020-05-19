@@ -32,7 +32,7 @@ development:
   # username: stargazers_backend
 
   # The password associated with the postgres role (username).
-  password: ""
+  # password: ""
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -41,7 +41,7 @@ development:
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  port: 6000
+  # port: 6000
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: stargazers_backend_production
-  username: stargazers_backend
-  password: <%= ENV['STARGAZERS_BACKEND_DATABASE_PASSWORD'] %>
+  # username: stargazers_backend
+  # password: <%= ENV['STARGAZERS_BACKEND_DATABASE_PASSWORD'] %>
