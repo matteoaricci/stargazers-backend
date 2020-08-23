@@ -1,25 +1,12 @@
 # README
+### Stargazers - Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Stargazers is a full stack application for space enthusiasts to browse constellations, zodiac signs, planets, and mingle with other users.
 
-Things you may want to cover:
+Users can create, edit and delete their profile, browse other profiles, and learn more about planets, constellations and stars.
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# stargazers-backend
+## Technology Used:
+- User images are stored using base64 strings.
+- Bootstrap is used for the styling, along with some custom CSS.
+- JavaScript/React for frontend and Ruby/Rails for backend
